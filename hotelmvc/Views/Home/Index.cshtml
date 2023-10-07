@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>benvenuto</h2>
+
+<div>seleziona da sta lista cosa vuoi fare</div>
+<ul>
+<li>@Html.ActionLink("Cliente", "Index", "Cliente", new { area = "" }, new { @class = "nav-link" })</li>
+<li>@Html.ActionLink("Camera", "Index", "Camera", new { area = "" }, new { @class = "nav-link" })</li>
+<li>@Html.ActionLink("prenotazioni", "Index", "Prenotazione", new { area = "" }, new { @class = "nav-link" })</li>
+<li>@Html.ActionLink("servizi", "Index", "Servizi", new { area = "" }, new { @class = "nav-link" })</li>
+
+    </ul>
+

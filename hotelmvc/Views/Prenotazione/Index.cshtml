@@ -1,0 +1,97 @@
+﻿@model IEnumerable<hotelmvc.Models.Prenotazione>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreatePrenotazione")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDprenotazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataprenotazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.annoprenotazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iniziosoggiorno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.finesoggiorno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.caparra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tariffa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mezzapensione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pensione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.colazioneinclusa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDcliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDcamera)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (hotelmvc.Models.Prenotazione item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDprenotazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataprenotazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.annoprenotazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iniziosoggiorno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.finesoggiorno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.caparra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tariffa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mezzapensione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pensione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.colazioneinclusa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDcliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDcamera)
+        </td>
+        <td>
+            @Html.ActionLink("modifica", "editprenotazione", new { IDprenotazione= item.IDprenotazione }, new { @class = "btn btn-warning" })
+        </td>
+    </tr>
+}
+
+</table>

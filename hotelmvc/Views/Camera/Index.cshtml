@@ -1,0 +1,50 @@
+﻿@model IEnumerable<hotelmvc.Models.Camera>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>lista delle camere</h2>
+
+<p>
+    @Html.ActionLink("Crea nuova camera", "CreateCamera")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDcamera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.singola)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.doppia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (hotelmvc.Models.Camera item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDcamera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descrizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.singola)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.doppia)
+        </td>
+        <td>
+            @Html.ActionLink("modifica", "editcamera", new { IDcamera = item.IDcamera }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("elimina", "deletecamera", new { IDcamera = item.IDcamera }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

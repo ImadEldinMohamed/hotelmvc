@@ -1,0 +1,59 @@
+﻿@model IEnumerable<hotelmvc.Models.Servizi>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateServizi")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDservizio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantita)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prezzo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDprenotazione)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (hotelmvc.Models.Servizi item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDservizio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descrizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantita)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prezzo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDprenotazione)
+        </td>
+       
+    </tr>
+}
+
+</table>
